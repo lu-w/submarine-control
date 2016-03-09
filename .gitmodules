@@ -1,0 +1,3 @@
+[submodule "submarine-protobuf"]
+	path = submarine-protobuf
+	url = https://github.com/lu-w/submarine-protobuf.git
