@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp"
+        android:layout_margin="6dp">
+
+        <ImageView
+            android:src="@drawable/ic_date_range_black_24dp"
+            android:contentDescription="@string/submarine_data_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_dive_date"
+            android:layout_marginStart="16dp"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:id="@+id/last_dive_date" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp"
+        android:layout_margin="6dp">
+
+        <ImageView
+            android:src="@drawable/ic_arrow_drop_down_circle_black_24dp"
+            android:contentDescription="@string/submarine_data_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/last_dive_depth"
+            android:layout_marginStart="16dp"
+            android:textAppearance="?android:attr/textAppearanceListItem"
+            android:id="@+id/last_dive_depth" />
+    </LinearLayout>
+
+</LinearLayout>

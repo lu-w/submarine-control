@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/main_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- The main content view -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/background_grey">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/main_content"
+                android:background="@color/background_grey"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/submarine_card"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardUseCompatPadding="true"
+                    card_view:cardBackgroundColor="@color/card_white"
+                    card_view:cardCornerRadius="4dp"
+                    card_view:cardElevation="4dp" >
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="4dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/colorText"
+                                android:textAppearance="?android:attr/textAppearanceMedium"
+                                android:padding="8dp"
+                                android:id="@+id/submarine_title"
+                                android:text="@string/submarine_title" />
+
+                            <ImageButton
+                                android:contentDescription="@string/refresh"
+                                android:src="@drawable/ic_refresh_black_24dp"
+                                android:background="?android:selectableItemBackground"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:id="@+id/button_refresh"
+                                android:layout_centerVertical="true"
+                                android:layout_alignTop="@+id/button_properties"
+                                android:layout_toStartOf="@+id/button_disconnect"
+                                android:onClick="submarineRefresh" />
+
+                            <ImageButton
+                                android:contentDescription="@string/disconnect"
+                                android:src="@drawable/ic_portable_wifi_off_black_24dp"
+                                android:background="?android:selectableItemBackground"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginEnd="6dp"
+                                android:id="@+id/button_disconnect"
+                                android:layout_centerVertical="true"
+                                android:layout_alignTop="@+id/button_properties"
+                                android:layout_toStartOf="@+id/button_properties"
+                                android:onClick="submarineDisconnect" />
+
+                            <ImageButton
+                                android:contentDescription="@string/properties"
+                                android:src="@drawable/ic_create_black_24dp"
+                                android:background="?android:selectableItemBackground"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
+                                android:id="@+id/button_properties"
+                                android:layout_centerVertical="true"
+                                android:layout_alignParentEnd="true"
+                                android:onClick="submarineEdit" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dip"
+                            android:background="@color/divider_grey" />
+
+                        <include layout="@layout/submarine_data" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ProgressBar
+                                android:id="@+id/dive_schedule_bar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:visibility="invisible"
+                                android:layout_marginRight="60dp"
+                                android:layout_marginTop="17dp"
+                                android:layout_marginLeft="15dp" />
+
+                            <ImageView
+                                android:contentDescription="@string/cancel"
+                                android:id="@+id/cancel_dive_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_cancel_black_24dp"
+                                android:onClick="cancelDive"
+                                android:padding="5dp"
+                                android:visibility="invisible"
+                                android:layout_alignParentTop="false"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="20dp" />
+
+                            <Button
+                                android:id="@+id/new_dive_button"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="newDive"
+                                android:textColor="@color/colorAccent"
+                                android:text="@string/new_dive"
+                                style="@style/Widget.AppCompat.Button.Borderless"
+                                android:layout_gravity="end"
+                                android:layout_alignParentTop="true"
+                                android:layout_alignParentEnd="true" />
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- The navigation drawer -->
+        <android.support.design.widget.NavigationView
+            android:id="@+id/main_drawer_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            app:menu="@menu/main_drawer_view" />
+
+    </android.support.v4.widget.DrawerLayout>
+
+</LinearLayout>

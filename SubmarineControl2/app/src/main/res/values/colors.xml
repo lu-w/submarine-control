@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#e91e63</color>
+    <color name="colorPrimaryDark">#c2185b</color>
+    <color name="colorAccent">#3f51b5</color>
+    <color name="colorText">#880e4f</color>
+    <color name="background_grey">#f1f1f1</color>
+    <color name="divider_grey">#898989</color>
+    <color name="card_white">#ffffff</color>
+    <color name="sea_blue">#0078e0</color>
+    <color name="data_orange">#fc9c00</color>
+</resources>

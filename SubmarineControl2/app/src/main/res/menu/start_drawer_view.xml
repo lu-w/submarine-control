@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/start_drawer_menu_main">
+
+        <item
+            android:id="@+id/start_nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:checked="true"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/start_nav_previous_dives"
+            android:icon="@drawable/ic_history_black_24dp"
+            android:title="@string/previous_dives" />
+
+
+    </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/start_drawer_menu_settings">
+
+        <item
+            android:id="@+id/start_nav_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/settings" />
+
+    </group>
+
+</menu>
